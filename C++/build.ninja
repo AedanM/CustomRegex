@@ -1,0 +1,31 @@
+cxx = g++
+cflags = -Wall -Wextra -Iinclude
+
+rule compile
+  command = $cxx -MMD -MT $out -MF $out.d $cflags -c $in -o $out -std=c++23
+depfile = $out.d
+
+rule link
+  command = $cxx $ldflags -o $out $in
+
+build .\obj\main.o: compile src\main.cpp
+  description = Compiling {str(src)}
+
+build .\obj\ArgParser.o: compile src\input\ArgParser.cpp
+  description = Compiling {str(src)}
+
+build .\obj\Groups.o: compile src\regexTypes\Groups.cpp
+  description = Compiling {str(src)}
+
+build .\obj\testSuite.o: compile src\tests\testSuite.cpp
+  description = Compiling {str(src)}
+
+build .\obj\test_Args.o: compile src\tests\test_Args.cpp
+  description = Compiling {str(src)}
+
+build .\obj\test_Groups.o: compile src\tests\test_Groups.cpp
+  description = Compiling {str(src)}
+
+
+build build/regexTool: link .\obj\main.o .\obj\ArgParser.o .\obj\Groups.o .\obj\testSuite.o .\obj\test_Args.o .\obj\test_Groups.o
+  description = Linking
