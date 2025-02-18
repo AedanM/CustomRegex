@@ -1,10 +1,11 @@
 #include "Groups.h"
 #include "MetaChars.h"
 #include <cstdint>
+#include <stdexcept>
 #include <string>
 #include <tuple>
 #include <vector>
-#include <stdexcept>
+
 
 using namespace std;
 vector<tuple<int, int>> FindRanges(string workingStr) {

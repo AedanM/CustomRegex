@@ -1,5 +1,5 @@
-#ifndef POSANC_H
-#define POSANC_H
+#ifndef ANCHOR_H
+#define ANCHOR_H
 #include <string>
 using namespace std;
 

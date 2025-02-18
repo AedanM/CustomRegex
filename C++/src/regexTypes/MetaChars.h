@@ -1,5 +1,5 @@
-#ifndef METAC_H
-#define METAC_H
+#ifndef META_H
+#define META_H
 #include <string>
 using namespace std;
 
