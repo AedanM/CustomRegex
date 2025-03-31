@@ -14,6 +14,9 @@ build .\obj\main.o: compile src\main.cpp
 build .\obj\ArgParser.o: compile src\input\ArgParser.cpp
   description = Compiling {str(src)}
 
+build .\obj\FileRead.o: compile src\input\FileRead.cpp
+  description = Compiling {str(src)}
+
 build .\obj\Groups.o: compile src\regexTypes\Groups.cpp
   description = Compiling {str(src)}
 
@@ -27,5 +30,5 @@ build .\obj\test_Groups.o: compile src\tests\test_Groups.cpp
   description = Compiling {str(src)}
 
 
-build build/regexTool: link .\obj\main.o .\obj\ArgParser.o .\obj\Groups.o .\obj\testSuite.o .\obj\test_Args.o .\obj\test_Groups.o
+build build/regexTool: link .\obj\main.o .\obj\ArgParser.o .\obj\FileRead.o .\obj\Groups.o .\obj\testSuite.o .\obj\test_Args.o .\obj\test_Groups.o
   description = Linking

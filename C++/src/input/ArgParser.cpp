@@ -11,6 +11,9 @@ InputArgs::InputArgs(int argc, char *argv[]) {
   int fileIdx = _FindFlagIdx(argc, argv, "-f");
   int helpIdx = _FindFlagIdx(argc, argv, "-h");
   int helpLongIdx = _FindFlagIdx(argc, argv, "--help");
+  int testIdx = _FindFlagIdx(argc, argv, "-t");
+
+  RunTests = testIdx > 0;
 
   if (helpIdx > 0 || helpLongIdx > 0) {
     Help = true;
@@ -22,12 +25,12 @@ InputArgs::InputArgs(int argc, char *argv[]) {
     if (patternIdx != -1) {
       Pattern = argv[patternIdx + 1];
     } else {
-      throw std::invalid_argument("No Pattern (-p) provided");
+      throw invalid_argument("No Pattern (-p) provided");
     }
     if (fileIdx != -1) {
       FileName = argv[fileIdx + 1];
     } else {
-      throw std::invalid_argument("No File (-f) provided");
+      throw invalid_argument("No File (-f) provided");
     }
   }
 }

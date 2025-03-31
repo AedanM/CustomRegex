@@ -1,7 +1,6 @@
-#include "../regexTypes/Groups.h"
 #include "test_Groups.h"
+#include "../regexTypes/Groups.h"
 #include <cassert>
-#include <iostream>
 
 using namespace std;
 #define assertm(exp, msg) assert((void(msg), exp))

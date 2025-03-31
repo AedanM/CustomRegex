@@ -8,6 +8,7 @@ public:
   string Pattern = "";
   string FileName = "";
   bool Help = false;
+  bool RunTests = false;
 
   InputArgs(int argc, char *argv[]);
 

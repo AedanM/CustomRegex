@@ -14,6 +14,9 @@ if ($?) {
     ninja
 }
 
+ninjavis --title "CustomRegex Build" .ninja_log .\build\buildLog.html
+
 if ($?) {
-    .\build\regexTool.exe  -f ".\sampleText.txt" -p "[^a-z,A-Z]$"
+    # .\build\regexTool.exe  -f ".\src\tests\sampleText.txt" -p "[^a-z,A-Z]$" -t
+    .\build\regexTool.exe  -f ".\src\tests\sampleText.txt" -p "[k]" -t
 }
